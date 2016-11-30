@@ -11,7 +11,14 @@ class m161118_191210_stucture extends Migration
   `last_name` varchar(200) NOT NULL,
   `telephone` text NOT NULL,
   `note` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `customer`
+--
+
+INSERT INTO `customer` (`id`, `last_name`, `telephone`, `note`) VALUES
+(7, '111', '222', '333');
 
 -- --------------------------------------------------------
 
@@ -29,8 +36,9 @@ CREATE TABLE IF NOT EXISTS `migration` (
 --
 
 INSERT INTO `migration` (`version`, `apply_time`) VALUES
-('m000000_000000_base', 1479492460),
-('m130524_201442_init', 1479492472);
+('m000000_000000_base', 1480490569),
+('m130524_201442_init', 1480490574),
+('m161118_191210_stucture', 1480491077);
 
 -- --------------------------------------------------------
 
@@ -130,7 +138,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT для таблицы `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT для таблицы `order`
 --
@@ -151,17 +159,11 @@ ALTER TABLE `user`
 --
 
 --
--- Ограничения внешнего ключа таблицы `customer`
---
-ALTER TABLE `customer`
-  ADD CONSTRAINT `customer_ibfk_1` FOREIGN KEY (`id`) REFERENCES `order` (`id`);
-
---
 -- Ограничения внешнего ключа таблицы `order`
 --
 ALTER TABLE `order`
-  ADD CONSTRAINT `order_ibfk_2` FOREIGN KEY (`id`) REFERENCES `customer` (`id`),
-  ADD CONSTRAINT `order_ibfk_3` FOREIGN KEY (`id`) REFERENCES `seamstress` (`id`);
+  ADD CONSTRAINT `order_ibfk_3` FOREIGN KEY (`id_seamstres`) REFERENCES `seamstress` (`id`),
+  ADD CONSTRAINT `order_ibfk_2` FOREIGN KEY (`id_customer`) REFERENCES `customer` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
