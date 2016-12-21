@@ -10,9 +10,9 @@ use Yii;
  * @property integer $id
  * @property integer $id_customer
  * @property integer $id_seamstres
- * @property string $date_orders
- * @property string $description
  * @property string $date_try
+ * @property string $description
+ * @property string $date_orders
  * @property string $cost
  * @property integer $status
  *
@@ -35,9 +35,9 @@ class Order extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id_customer',  'description'], 'required'],
+            [['id_customer', 'id_seamstres', 'description'], 'required', 'message' => 'Поле обязательно для заполнения'],
             [['id_customer', 'id_seamstres', 'status'], 'integer'],
-            [['date_orders', 'date_try'], 'safe'],
+            [['date_try', 'date_orders'], 'safe'],
             [['description'], 'string'],
             [['cost'], 'number'],
             [['id_customer'], 'exist', 'skipOnError' => true, 'targetClass' => Customer::className(), 'targetAttribute' => ['id_customer' => 'id']],
@@ -51,14 +51,14 @@ class Order extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'id_customer' => 'Id Customer',
-            'id_seamstres' => 'Id Seamstres',
-            'date_orders' => 'Date Orders',
-            'description' => 'Description',
-            'date_try' => 'Date Try',
-            'cost' => 'Cost',
-            'status' => 'Status',
+            'id' => '#',
+            'id_customer' => 'Заказчик',
+            'id_seamstres' => 'Швея',
+            'date_try' => 'Дата примерки',
+            'description' => 'Описание',
+            'date_orders' => 'Дата заказа',
+            'cost' => 'Цена',
+            'status' => 'Выполнено'
         ];
     }
 
