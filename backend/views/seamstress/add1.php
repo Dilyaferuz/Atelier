@@ -1,3 +1,6 @@
+<?php 
+	Use \yii\helpers\Html; 
+?> 
 <div class="jumbotron">
         <h2>Добавлено швея </h2>
    <div class="jumbotron">

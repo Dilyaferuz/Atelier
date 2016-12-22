@@ -38,8 +38,8 @@ class Order extends \yii\db\ActiveRecord
             [['id_customer', 'id_seamstres', 'description'], 'required', 'message' => 'Поле обязательно для заполнения'],
             [['id_customer', 'id_seamstres', 'status'], 'integer'],
             [['date_try', 'date_orders'], 'safe'],
-            [['description'], 'string'],
-            [['cost'], 'number'],
+            [['description'], 'string','max' => 200, 'tooLong' => 'Указано слишком длинное значение'],
+            [['cost'], 'message' => 'Цена должна быть число'],
             [['id_customer'], 'exist', 'skipOnError' => true, 'targetClass' => Customer::className(), 'targetAttribute' => ['id_customer' => 'id']],
             [['id_seamstres'], 'exist', 'skipOnError' => true, 'targetClass' => Seamstress::className(), 'targetAttribute' => ['id_seamstres' => 'id']],
         ];

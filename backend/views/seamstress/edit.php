@@ -1,3 +1,6 @@
+<?php 
+	Use \yii\helpers\Html; 
+?> 
 <div  class="jumbotron">
 <h2 align="center"> Изменили данное о швее! </h2> 
 </div>

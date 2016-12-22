@@ -8,39 +8,41 @@ use \common\models\Order;
 	class SeamstressController extends Controller {
 		public function actionShow(){
 			$seamstress= Seamstress::find()
-		->having('status=1')
-		->orderBy(['Id'=> SORT_ASC,'last_name'=> SORT_ASC])
+			->having('status=1')
+			->orderBy(['Id'=> SORT_ASC,'last_name'=> SORT_ASC])
 			->all();
-			return $this->render('seamstress',['seamstress'=>$seamstress]);
+				return $this->render('seamstress',['seamstress'=>$seamstress]);
 			if ($seamstress){
 				return $this->render('seamstress',['seamstress'=>$seamstress]);
-			} else {
-			throw new \yii\web\NotFoundHttpException('Швея не найдена');
-			}
-		
-	return $this->render('add', ['customer'=>$customer,'seamstress'=>$seamstress ]);
+			} 
+				else {
+				throw new \yii\web\NotFoundHttpException('Швея не найдена');
+				}
+				return $this->render('add', ['customer'=>$customer,'seamstress'=>$seamstress ]);
 		}
 		
 	public function actionView2($id){
 		$seamstress = Seamstress::findOne($id);
 		if ($seamstress) {
 			return $this->render('view2',['seamstress' => $seamstress]);
-		} else {
+		}
+			else {
 			throw new \yii\web\NotFoundHttpException('Информация не найдена');
 			}
 	}
 			public function actionMain(){
-			$seamstress= Seamstress::find()
-		->having('status=1')
-		->orderBy(['specialization'=> SORT_ASC])
-			->all();
-			return $this->render('main',['seamstress'=>$seamstress]);
+				$seamstress= Seamstress::find()
+				->having('status=1')
+				->orderBy(['specialization'=> SORT_ASC])
+				->all();
+				return $this->render('main',['seamstress'=>$seamstress]);
 			if ($seamstress){
 				return $this->render('main',['seamstress'=>$seamstress]);
-			} else {
-			throw new \yii\web\NotFoundHttpException('Информация не найдена');
+			} 
+				else {
+				throw new \yii\web\NotFoundHttpException('Информация не найдена');
 			}
-		}
+			}
 		
 		public function actionAdd(){ 
 			$order= new Order; 

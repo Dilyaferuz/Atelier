@@ -18,7 +18,7 @@ use \common\models\Order;
 		$customer= Customer::find()
 		->orderBy(['Id'=> SORT_ASC,'last_name'=> SORT_ASC])
 		->all();	
-		return $this->render('cust', ['customer' =>$customer]);
+			return $this->render('cust', ['customer' =>$customer]);
 	}
 		
 
@@ -26,11 +26,11 @@ use \common\models\Order;
 			$customer= new Customer;
 			if(isset($_POST['Customer'])){
 				$customer->attributes=$_POST['Customer'];
-				if($customer->save()){
-					return $this->render('add1', ['customer'=>$customer]);
-				}
+					if($customer->save()){
+						return $this->render('add1', ['customer'=>$customer]);
+					}
 			}
-			return $this->render('add', ['customer'=>$customer]);
+					return $this->render('add', ['customer'=>$customer]);
 	}
 		public function actionDelete ($id)
 	{
@@ -38,20 +38,48 @@ use \common\models\Order;
 		if (!$customer) {
 			return 'Заказчик не  найден';
 		}
-		$customer->delete();
-		return $this->redirect(['customer/cust']);
+		else {
+			throw new \yii\web\NotFoundHttpException('Информация не найдена');
+		}
+			$customer->delete();
+				return $this->redirect(['customer/cust']);
 	}	
 	public function actionEdit($id){
 			$customer = Customer::findOne($id);
-			if (!$customer){
-				return 'Заказчик не найден';
-			}
+				if (!$customer){
+					return 'Заказчик не найден';
+				}
 			if(isset($_POST['Customer'])){
 				$customer->attributes=$_POST['Customer'];
-				if($customer->save()){
-					return $this->render('edit');
+					if($customer->save()){
+						return $this->render('edit');
+					}
+				else {
+					throw new \yii\web\NotFoundHttpException('Информация не найдена');
 				}
 			}
-			return $this->render('add', ['customer'=>$customer]);
-		}
+					return $this->render('add', ['customer'=>$customer]);
+	}
+	 public function behaviors()
+    {
+        return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        // страница входа в систему и сообщения об ошибке доступны всем
+                        'actions' => [ 'login','error'],
+                        'allow' => true,
+                    ],
+                    [
+                        // выход из системы только для зарегистрированного пользователя
+                        'actions' => ['logout','index', 'delete', 'add', 'cust', 'edit'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+         ];
+	}
+		
 }

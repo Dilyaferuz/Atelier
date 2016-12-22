@@ -33,7 +33,7 @@ class Customer extends \yii\db\ActiveRecord
     {
         return [
             [['last_name', 'first_name', 'patronymic', 'telephone', ], 'required', 'message' => 'Поле обязательно для заполнения'],
-            [['telephone'], 'string','max' => 100, 'tooLong' => 'Указано слишком длинное значение'],
+            [['telephone'], 'string','max' => 20, 'tooLong' => 'Указано слишком длинное значение'],
             [['last_name', 'first_name', 'patronymic', 'note'], 'string', 'max' => 200],
         ];
     }

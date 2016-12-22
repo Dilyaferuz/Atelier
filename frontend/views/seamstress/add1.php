@@ -1,3 +1,6 @@
+<?php
+	Use \yii\helpers\Html;
+?>
 <div class="jumbotron">
         <h2>Заявка регистрации отправлено. Вы можете оформить заказ! </h2>
 		 <div class="jumbotron">
