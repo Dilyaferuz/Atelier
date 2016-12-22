@@ -44,24 +44,7 @@ INSERT INTO `customer` (`id`, `last_name`, `first_name`, `patronymic`, `telephon
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `migration`
---
-
-CREATE TABLE IF NOT EXISTS `migration` (
-  `version` varchar(180) NOT NULL,
-  `apply_time` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Дамп данных таблицы `migration`
---
-
-INSERT INTO `migration` (`version`, `apply_time`) VALUES
-('m000000_000000_base', 1480772608),
-('m130524_201442_init', 1480772615),
-('m161118_191210_stucture', 1480772618);
-
--- --------------------------------------------------------
+--- --------------------------------------------------------
 
 --
 -- Структура таблицы `order`
@@ -138,12 +121,6 @@ INSERT INTO `seamstress` (`id`, `first_name`, `last_name`, `specialization`, `te
 --
 ALTER TABLE `customer`
   ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `migration`
---
-ALTER TABLE `migration`
-  ADD PRIMARY KEY (`version`);
 
 --
 -- Индексы таблицы `order`

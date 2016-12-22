@@ -20,6 +20,7 @@ use \common\models\Order;
 		
 	return $this->render('add', ['customer'=>$customer,'seamstress'=>$seamstress ]);
 		}
+		
 	public function actionView2($id){
 		$seamstress = Seamstress::findOne($id);
 		if ($seamstress) {
