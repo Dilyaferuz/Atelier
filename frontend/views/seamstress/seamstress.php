@@ -15,12 +15,12 @@
 		<td class="success"><?= htmlspecialchars($seamstress->first_name) ?></td>
 		<td "success"><?= htmlspecialchars($seamstress->specialization) ?></td>
 		<td "danger"><?= Html::a('Подробнее', ['seamstress/view2', 'id' => $seamstress ->id]) ?></td>
-		<td><?= Html::a('<span class="glyphicon glyphicon-plus"></span> Оформить заказ', ['seamstress/add', 'id'])?> <td> </tr>
+	</tr>
  
 			
   <?php } ?>
   <tr>
   <td class="success" colspan='4'></td>
-
+<td><?= Html::a('<span class="glyphicon glyphicon-plus"></span> Оформить заказ', ['seamstress/add', 'id'])?> <td> </tr>
 </table>
   <p class="jumbotron" ><?= Html::a('<span class="glyphicon glyphicon-arrow-left"></span> На главную', ['seamstress/main'])?></a>

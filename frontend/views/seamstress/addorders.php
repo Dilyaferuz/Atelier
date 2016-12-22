@@ -1,24 +1,6 @@
-
- <?php Use \yii\helpers\Html; ?>
-<h2>Швеи</h2>
-<table class="table">
-	<tr>
-		<th>№ </th> 
-		<th>Фамилия </th> 
-		<th>Отчество </th> 
-		<th>Специализация</th>
-		<th></th>
-	</tr>
-	<?php foreach($seamstress as $seamstress){ ?>
-	<tr>
-		<td> <?= $seamstress->id_seamstres ?> </td>
-		<td> <?= htmlspecialchars($seamstress->last_name) ?> </td>
-		<td> <?= htmlspecialchars($seamstress->first_name) ?> </td>
-		<td> <?= htmlspecialchars($seamstress->specialization) ?> </td>
-		<td> <a class="btn btn-sm btn-success" href="/?r=seamstress/index&id=<?= $seamstress->id_seamstres ?>">Заказать</a> </td>
-	</tr>
-	 <?php } ?>
-	 <tr>
-
-	 </tr>
-</table>
+<?php Use \yii\helpers\Html; ?>
+<h2 class='jumbotron'> Вы успешно отправили заявку ! </h2>
+<h2 class='jumbotron'>Вам должно было прийти сообщение по номеру телефона который вы указали с информацией о вашем заказе!</h2>
+<h2 class='jumbotron'>Для подтверждения вашей заявки в близжайжее время с вами свяжется наш менеджер!</h2>
+ <p class="jumbotron" ><?= Html::a('<span class="glyphicon glyphicon-arrow-left"></span> На главную', ['seamstress/main'])?></a>
+ 

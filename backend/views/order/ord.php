@@ -1,4 +1,5 @@
 <?php Use \yii\helpers\Html; ?>
+
 <table class="table">
   <tr>
 	
@@ -13,10 +14,11 @@
 	<th></th>
   </tr>
   <?php foreach($order as $order){ ?>
+
   <tr>
 	<td><?= $order->id ?></td>
 	<td><?= htmlspecialchars($order->getIdCustomer()->one()->last_name) ?> </td>
-	<td><?= htmlspecialchars($order->getIdSeamstres()->one()->last_name) ?> </td>
+	<td><?= htmlspecialchars($order->getIdSeamstres()->one()->specialization) ?> </td>
 	<td><?= htmlspecialchars($order->date_orders) ?></td>
 	<td><?= htmlspecialchars($order->description) ?></td>
 	<td><?= htmlspecialchars($order->date_try) ?></td>
@@ -27,6 +29,7 @@
 		<?= Html::a('<span class="glyphicon glyphicon-remove"></span> Удалить', ['order/delete', 'id' =>$order->id], ['class'=>'btn btn-primary']); ?>
 	</td>
   </tr>
+
   <?php } ?>
 
  </table>

@@ -13,29 +13,14 @@ class m161118_191210_stucture extends Migration
   `patronymic` varchar(200) NOT NULL,
   `telephone` text NOT NULL,
   `note` varchar(200) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `customer`
 --
 
 INSERT INTO `customer` (`id`, `last_name`, `first_name`, `patronymic`, `telephone`, `note`) VALUES
-(7, '111', '', '', '222', '333'),
-(8, 'rber', '', '', 'egwe', 'vewewv'),
-(9, 'cwsc', '', '', 'scs', 'csc'),
-(10, 'ax', '', '', 'x', 'x'),
-(11, 'esds', '', '', 'vdd', 'vdvd'),
-(12, 'evd', '', '', '1212121', 'vww'),
-(13, 'rvbwrv', '', '', '232342342', 'thrthts'),
-(14, 'rgrgregrg', '', '', '341341341', 'tfbeabear'),
-(15, 'egwegfwe', '', '', '21241', 'rgwegwegw'),
-(16, 'fefe', '', '', '2312', 'fwfwefw'),
-(17, 'heethetht', '', '', '34523452464', 'tgjnrtjtjr'),
-(18, '24e34g34g', '', '', '34235235', 'tghrtgrt'),
-(19, 't2t', '', '', '3523523', 'egege'),
-(20, 'tgheher', '', '', '34235235', 'tegrer'),
-(21, 'rdwe', '', '', 'ewrvew', 'bwr'),
-(22, 'ergwr', '', '', 'rbw', 'wvergw'),
+(11, 'Регова', 'Ленара', 'Носовна', '+79561261262', 'Юбку укаратить'),
 (23, '32g43g4g', '', '', '223323232', 'ergergeagrger'),
 (24, 'цкупцупцуп', '', '', '3434322', 'руеркер'),
 (25, 'уеиук', '', '', '3423423', 'уерркуе'),
@@ -47,7 +32,14 @@ INSERT INTO `customer` (`id`, `last_name`, `first_name`, `patronymic`, `telephon
 (31, 'кпукпук', '', '', '3232332323', 'купкупукпукп'),
 (32, 'jjsrjvsev', '', '', '435434', 'gergergerge'),
 (33, 'rhberhber', '', '', 'vwevwe', 'vewv'),
-(34, '76k7k6', '', '', '654634', 'uykukyuky');
+(35, 'Солдаткина', 'Яна', 'Сергеевна', '+79561626262', 'ыаыуаыуаацу'),
+(37, 'Тимкин', 'Сергай', 'Отвсы', '+7952636363', 'вмцуцуц'),
+(38, 'Иванайко', 'Ольга', 'Владимировна', '+7946626269595', 'Переделка'),
+(39, 'Иванайко', 'Ольга', 'Владимировна', '+7946626269595', 'Переделка'),
+(40, 'Иванайко', 'Ольга', 'Владимировна', '+7946626269595', 'Переделка'),
+(41, 'Иванайко', 'Ольга', 'Владимировна', '+7946626269595', 'Переделка'),
+(42, 'Сарсанова', 'Екаатерина', 'Поповна', '+76516226326', ''),
+(43, 'Сарсанова', 'Екаатерина', 'Поповна', '+76516226326', '');
 
 -- --------------------------------------------------------
 
@@ -84,17 +76,29 @@ CREATE TABLE IF NOT EXISTS `order` (
   `date_orders` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `cost` decimal(10,0) NOT NULL,
   `status` tinyint(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `order`
 --
 
 INSERT INTO `order` (`id`, `id_customer`, `id_seamstres`, `date_try`, `description`, `date_orders`, `cost`, `status`) VALUES
-(1, 7, 2, '2016-12-02', 'уеруерцкцр', '2016-12-03 14:35:30', '42434', 0),
-(2, 7, 2, '2016-12-02', 'уеруерцкцр', '2016-12-03 14:35:33', '42434', 0),
-(3, 7, 1, '2016-12-03', 'etghrege', '2016-12-03 14:42:56', '3423', 1),
-(4, 7, 1, '2016-12-03', 'etghrege', '2016-12-03 14:43:01', '3423', 1);
+(2, 37, 4, '2016-12-30', 'yjhgiuh', '2016-12-21 07:23:27', '666', 0),
+(3, 27, 3, '2016-12-08', 'wdqwdqw', '2016-12-23 03:12:15', '2242', 0),
+(4, 11, 3, '0000-00-00', 'dfsefefefwfwwfw', '2016-12-16 10:34:18', '0', 0),
+(5, 11, 3, '0000-00-00', 'dfsefefefwfwwfw', '2016-12-16 10:35:21', '0', 0),
+(6, 11, 3, '0000-00-00', 'dfsefefefwfwwfw', '2016-12-16 10:35:48', '0', 0),
+(7, 11, 3, '0000-00-00', 'dfsefefefwfwwfw', '2016-12-16 10:36:24', '0', 0),
+(8, 11, 3, '0000-00-00', 'dfsefefefwfwwfw', '2016-12-16 10:37:10', '0', 0),
+(9, 11, 3, '0000-00-00', 'dfsefefefwfwwfw', '2016-12-16 10:40:31', '0', 0),
+(10, 11, 3, '0000-00-00', 'dfsefefefwfwwfw', '2016-12-16 10:41:45', '0', 0),
+(11, 11, 3, '0000-00-00', 'dfsefefefwfwwfw', '2016-12-16 10:42:16', '0', 0),
+(12, 38, 3, '0000-00-00', 'Пн в 15:00', '2016-12-22 08:03:06', '0', 0),
+(13, 39, 3, '0000-00-00', 'Пн в 15:00', '2016-12-22 08:04:14', '0', 0),
+(14, 40, 3, '0000-00-00', 'Пн в 15:00', '2016-12-22 08:05:29', '0', 0),
+(15, 41, 3, '0000-00-00', 'Пн в 15:00', '2016-12-22 08:06:35', '0', 0),
+(16, 42, 5, '0000-00-00', 'Ср в 13:35', '2016-12-22 08:15:53', '0', 0),
+(17, 43, 5, '0000-00-00', 'Ср в 13:35', '2016-12-22 08:16:20', '0', 0);
 
 -- --------------------------------------------------------
 
@@ -111,42 +115,19 @@ CREATE TABLE IF NOT EXISTS `seamstress` (
   `status` tinyint(11) NOT NULL,
   `experience` int(11) NOT NULL,
   `scedule_of_work` varchar(200) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `seamstress`
 --
 
 INSERT INTO `seamstress` (`id`, `first_name`, `last_name`, `specialization`, `telephone`, `status`, `experience`, `scedule_of_work`) VALUES
-(1, 'Диля', 'Маматова', 'Вышивание', '+49613256546', 1, 0, ''),
-(2, 'Диля', 'Маматова', 'Вышивание', '+49613256546', 1, 0, ''),
-(3, 'verere', 'tbegr', 'vervrvrv', '35445345', 1, 5, 'gygy23234'),
-(4, 'verere', 'tbegr', 'vervrvrv', '35445345', 1, 5, 'gygy23234');
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `user`
---
-
-CREATE TABLE IF NOT EXISTS `user` (
-  `id` int(11) NOT NULL,
-  `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `auth_key` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
-  `password_hash` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `password_reset_token` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `status` smallint(6) NOT NULL DEFAULT '10',
-  `created_at` int(11) NOT NULL,
-  `updated_at` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Дамп данных таблицы `user`
---
-
-INSERT INTO `user` (`id`, `username`, `auth_key`, `password_hash`, `password_reset_token`, `email`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Atelier', '-Bv6X7t0QQxz8EgT98PSuXSG5PAefWLV', '$2y$13$p/9n5gcrJQ9cJT5yDvREze/pMRB.a/a8/030oXlWFbEwD.zDRqwAe', NULL, 'Atelier@gmail.com', 10, 1481716522, 1481716522);
+(1, 'Диля', 'Маматова', 'Вышивание', '+49613256546', 1, 1, 'Пн-Чт с 10:00 до 18:00'),
+(2, 'Нина', 'Лапутина', 'Пошив платье', '+49613256546', 1, 2, 'Вт-Сб 11:00-20:00'),
+(3, 'Валерия', 'Дудкина', 'Брюки', '+795635445345', 1, 5, 'Ср-Вос 09:00-17:00'),
+(4, 'verere', 'tbegr', 'vervrvrv', '35445345', 0, 5, 'gygy23234'),
+(5, 'Мира', 'Николаевна', 'Пошив', '+794621626', 1, 3, 'Пн-Пт с 10:00 до 20:00'),
+(6, 'Лилия', 'Морозова', 'Свадебные платья ', '+446163666989', 1, 4, 'Пн-Вос 09:00-17:00');
 
 --
 -- Индексы сохранённых таблиц
@@ -180,15 +161,6 @@ ALTER TABLE `seamstress`
   ADD KEY `first_name` (`first_name`);
 
 --
--- Индексы таблицы `user`
---
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `username` (`username`),
-  ADD UNIQUE KEY `email` (`email`),
-  ADD UNIQUE KEY `password_reset_token` (`password_reset_token`);
-
---
 -- AUTO_INCREMENT для сохранённых таблиц
 --
 
@@ -196,22 +168,17 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT для таблицы `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=35;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=44;
 --
 -- AUTO_INCREMENT для таблицы `order`
 --
 ALTER TABLE `order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=18;
 --
 -- AUTO_INCREMENT для таблицы `seamstress`
 --
 ALTER TABLE `seamstress`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
---
--- AUTO_INCREMENT для таблицы `user`
---
-ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- Ограничения внешнего ключа сохраненных таблиц
 --
@@ -223,9 +190,6 @@ ALTER TABLE `order`
   ADD CONSTRAINT `order_ibfk_2` FOREIGN KEY (`id_customer`) REFERENCES `customer` (`id`),
   ADD CONSTRAINT `order_ibfk_3` FOREIGN KEY (`id_seamstres`) REFERENCES `seamstress` (`id`);
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 		");
 	}

@@ -54,7 +54,4 @@ use \common\models\Order;
 			}
 			return $this->render('add', ['customer'=>$customer]);
 		}
-	
 }
-	
- 

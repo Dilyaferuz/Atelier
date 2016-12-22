@@ -39,9 +39,7 @@ AppAsset::register($this);
 		['label' => 'Заказ', 'url' => ['/seamstress/show']],
 		['label' => 'О нас', 'url' => ['/site/index']],
      ];
-	 	
-    
-         echo Nav::widget([
+	 	 echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => $menuItems,
     ]);
