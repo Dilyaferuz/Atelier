@@ -1,5 +1,6 @@
-<?php
 
+<?php Use \yii\helpers\Html; ?>
+<?php
 /* @var $this yii\web\View */
 
 $this->title = 'Ателье';
@@ -10,10 +11,9 @@ $this->title = 'Ателье';
         <h1>Добро пожаловать!</h1>
 
           <div class="jumbotron">
-                <p><a class="btn btn-default" href="http://admin.ru/?r=seamstress/seam">Швеи &raquo;</a></p>
-      
-                <p><a class="btn btn-default" href="http://admin.ru/?r=customer/cust">Заказчики &raquo;</a></p>
-                        
-                <p><a class="btn btn-default" href="http://admin.ru/?r=order/ord">Заказы &raquo;</a></p>
-            </div>
+		  <p class="btn btn-default" ><?= Html::a('<span></span> Швеи', ['seamstress/seam'])?></a>
+		   <p class="btn btn-default" ><?= Html::a('<span></span> Заказчики', ['customer/cust'])?></a>
+		    <p class="btn btn-default" ><?= Html::a('<span></span> Заказы', ['order/ord'])?></a>
+               
+                </div>
      </div>

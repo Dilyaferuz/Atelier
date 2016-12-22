@@ -1,4 +1,6 @@
 <div class="jumbotron">
         <h2>Заказчик зарегистрирован </h2>
- <p><a class="btn btn-default" href="http://admin.ru/?r=customer/cust">Заказ &raquo;</a></p>
-</div>
+ </div>
+ <div class="jumbotron">
+     <p class="btn btn-default" ><?= Html::a('<span></span> Заказ &raquo;', ['customer/cust'])?></a>
+ </div>

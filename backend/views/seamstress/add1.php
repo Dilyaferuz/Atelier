@@ -1,4 +1,6 @@
 <div class="jumbotron">
         <h2>Добавлено швея </h2>
- <p><a class="btn btn-default" href="http://admin.ru/index.php?r=seamstress%2Fseam">Ок &raquo;</a></p>
+   <div class="jumbotron">
+     <p class="btn btn-default" ><?= Html::a('<span></span> Ок &raquo;', ['seamstress/seam'])?></a>
+ </div>
 </div>

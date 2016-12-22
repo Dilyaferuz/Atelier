@@ -10,7 +10,7 @@
 	<th>Описание</th>
 	<th>Дата примерки</th>
 	<th>Цена</th>
-<th>Статус</th>
+	<th>Статус</th>
 	<th></th>
   </tr>
   <?php foreach($order as $order){ ?>

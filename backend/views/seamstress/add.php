@@ -3,7 +3,7 @@ use yii\bootstrap\ActiveForm;
 use yii\helpers\ArrayHelper;
 ?>
 <div  class='jumbotron'>
-<h2> Регистрация швеи</h2>
+<h2> Добавление швеи</h2>
 <?php $form = ActiveForm::begin();?>
 <?= $form->field($seamstress, 'last_name') ?>
 <?= $form->field($seamstress, 'first_name') ?>

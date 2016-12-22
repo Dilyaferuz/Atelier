@@ -31,4 +31,6 @@
 		</td> 
 </tr>
  </table>
- <p class="jumbotron"><a class="btn btn-default" href="http://admin.ru/index.php">&laquo;На главную </a></p>
+   <div class="jumbotron">
+     <p class="btn btn-default" ><?= Html::a('<span></span> &laquo;На главную', ['site/index'])?></a>
+ </div>
