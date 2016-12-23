@@ -36,7 +36,7 @@ class Order extends \yii\db\ActiveRecord
     {
         return [
             [['id_customer', 'id_seamstres', 'description'], 'required', 'message' => 'Поле обязательно для заполнения'],
-            [['id_customer', 'id_seamstres', 'status'], 'integer'],
+            [['id_customer', 'id_seamstres', 'status'], 'integer','message' => 'Поля должна быть числом'],
             [['date_try', 'date_orders'], 'safe'],
             [['description'], 'string'],
             [['cost'], 'integer', 'message' => 'Цена должна быть числом'],
