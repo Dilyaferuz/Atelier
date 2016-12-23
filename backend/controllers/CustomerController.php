@@ -18,50 +18,44 @@ use \common\models\Order;
 		$customer= Customer::find()
 		->orderBy(['Id'=> SORT_ASC,'last_name'=> SORT_ASC])
 		->all();	
-			return $this->render('cust', ['customer' =>$customer]);
+		return $this->render('cust', ['customer' =>$customer]);
 	}
-		
-
+	
 	public function actionAdd(){
-			$customer= new Customer;
-			if(isset($_POST['Customer'])){
-				$customer->attributes=$_POST['Customer'];
-					if($customer->save()){
-						return $this->render('add1', ['customer'=>$customer]);
-					}
+		$customer= new Customer;
+		if(isset($_POST['Customer'])){
+		$customer->attributes=$_POST['Customer'];
+			if($customer->save()){
+				return $this->render('add1', ['customer'=>$customer]);
 			}
-					return $this->render('add', ['customer'=>$customer]);
+		}
+		return $this->render('add', ['customer'=>$customer]);
 	}
-		public function actionDelete ($id)
-	{
+	
+	public function actionDelete ($id){
 		$customer=Customer::findOne($id);
 		if (!$customer) {
-			return 'Заказчик не  найден';
-		}
-		else {
-			throw new \yii\web\NotFoundHttpException('Информация не найдена');
+			throw new \yii\web\NotFoundHttpException('Заказчик не найден');
 		}
 			$customer->delete();
-				return $this->redirect(['customer/cust']);
-	}	
-	public function actionEdit($id){
-			$customer = Customer::findOne($id);
-				if (!$customer){
-					return 'Заказчик не найден';
-				}
-			if(isset($_POST['Customer'])){
-				$customer->attributes=$_POST['Customer'];
-					if($customer->save()){
-						return $this->render('edit');
-					}
-				else {
-					throw new \yii\web\NotFoundHttpException('Информация не найдена');
-				}
-			}
-					return $this->render('add', ['customer'=>$customer]);
+			return $this->redirect(['customer/cust']);
 	}
-	 public function behaviors()
-    {
+	
+	public function actionEdit($id){
+		$customer = Customer::findOne($id);
+		if (!$customer){
+			throw new \yii\web\NotFoundHttpException('Заказчик не найден');
+		}
+		if(isset($_POST['Customer'])){
+			$customer->attributes=$_POST['Customer'];
+			if($customer->save()){
+				return $this->render('edit');
+			}
+		}
+		return $this->render('add', ['customer'=>$customer]);
+	}
+	
+	 public function behaviors() {
         return [
             'access' => [
                 'class' => AccessControl::className(),

@@ -34,6 +34,7 @@ use \common\models\Order;
             ],
          ];
 	}
+	
 	public function actionSeam(){
 		$seamstress= Seamstress::find()
 		->orderBy(['Id'=> SORT_ASC,'last_name'=> SORT_ASC])
@@ -44,45 +45,44 @@ use \common\models\Order;
 		
 
 	public function actionAdd(){
-			$seamstress= new Seamstress;
-			if(isset($_POST['Seamstress'])){
-				$seamstress->attributes=$_POST['Seamstress'];
-				if($seamstress->save()){
-					return $this->render('add1', ['seamstress'=>$seamstress]);
-				}
-				else {
-					throw new \yii\web\NotFoundHttpException('Информация не найдена');
-				}
+		$seamstress= new Seamstress;
+		if(isset($_POST['Seamstress'])){
+			$seamstress->attributes=$_POST['Seamstress'];
+			if($seamstress->save()){
+				return $this->render('add1', ['seamstress'=>$seamstress]);
 			}
-			return $this->render('add', ['seamstress'=>$seamstress]);
+			else {
+				throw new \yii\web\NotFoundHttpException('Информация не найдена');
+			}
+		}
+		return $this->render('add', ['seamstress'=>$seamstress]);
 	}
-			public function actionDelete ($id){
-				$seamstress=Seamstress::findOne($id);
-				if (!$seamstress) {
-					return 'Швея не  найдена';
-				}
-					else {
-					throw new \yii\web\NotFoundHttpException('Информация не найдена');
-					}
-					$seamstress->delete();
-					return $this->redirect(['seamstress/seam']);
-			}	
+	
+	public function actionDelete ($id){
+		$seamstress=Seamstress::findOne($id);
+		if (!$seamstress) {
+			return 'Швея не  найдена';
+		}else {
+			throw new \yii\web\NotFoundHttpException('Информация не найдена');
+		}
+		$seamstress->delete();
+		return $this->redirect(['seamstress/seam']);
+	}	
+	
 	public function actionEdit($id){
-			$seamstress = Seamstress::findOne($id);
-			if (!$seamstress){
-				return 'Заказчик не найден';
+		$seamstress = Seamstress::findOne($id);
+		if (!$seamstress){
+			return 'Заказчик не найден';
+		}
+		if(isset($_POST['Seamstress'])){
+			$seamstress->attributes=$_POST['Seamstress'];
+			if($seamstress->save()){
+				return $this->render('edit');
+			}else {
+				throw new \yii\web\NotFoundHttpException('Информация не найдена');
 			}
-			
-			if(isset($_POST['Seamstress'])){
-				$seamstress->attributes=$_POST['Seamstress'];
-				if($seamstress->save()){
-					return $this->render('edit');
-				}
-					else {
-						throw new \yii\web\NotFoundHttpException('Информация не найдена');
-					}
-			}
-			return $this->render('add', ['seamstress'=>$seamstress]);
+		}
+		return $this->render('add', ['seamstress'=>$seamstress]);
 	}
 	
 }

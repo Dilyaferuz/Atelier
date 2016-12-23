@@ -35,7 +35,7 @@ class Seamstress extends \yii\db\ActiveRecord
     {
         return [
             [['first_name', 'last_name', 'specialization', 'telephone', 'status', 'experience', 'scedule_of_work'], 'required', 'message' => 'Поле обязательно для заполнения'],
-            [['specialization', 'telephone'], 'string'],
+            [['specialization', 'telephone'],'string'],
             [['status', 'experience'], 'integer'],
             [['first_name', 'last_name', 'scedule_of_work'], 'string', 'max' => 200],
         ];
