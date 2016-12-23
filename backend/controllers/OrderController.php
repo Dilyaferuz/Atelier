@@ -12,7 +12,7 @@ use \common\models\Order;
 /**
  * Site controller
  */
- class OrderController extends Controller
+ class OrderController extends Controller{
 	public function behaviors() {
         return [
             'access' => [
